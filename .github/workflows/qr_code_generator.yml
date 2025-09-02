@@ -9,6 +9,9 @@ jobs:
   generate-qr:
     runs-on: ubuntu-latest
     steps:
+      - name: Install zbar library
+        run: sudo apt-get update && sudo apt-get install -y libzbar0
+        shell: bash
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Set up Python
