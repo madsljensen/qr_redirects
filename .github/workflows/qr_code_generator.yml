@@ -20,6 +20,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt || true
           pip install qrcode
+          pip install pillow
       - name: Run QR Code Generator
         run: |
           python qr_code_generator.py
