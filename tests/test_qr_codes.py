@@ -7,6 +7,8 @@ from pyzbar.pyzbar import decode
 
 def test_qr_generation():
     subdirectories = [d for d in os.listdir('.') if os.path.isdir(d) and not d.startswith('.')]
+    if not subdirectories:
+        raise ValueError("No subdirectories found")
     for subdir in subdirectories:
         # Check if the QR code image exists
         qr_image_path = os.path.join(subdir, f"{subdir}_qr.png")
